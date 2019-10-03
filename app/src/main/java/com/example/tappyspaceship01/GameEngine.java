@@ -115,12 +115,22 @@ public class GameEngine extends SurfaceView implements Runnable {
                 R.drawable.rainbow32);
         this.rainbowXPosition = 1300;
         this.rainbowYPosition = 120;
+        this.rainbowHitbox = new Rect(1300,
+                120,
+                1300+rainbowImage.getWidth(),
+                120+rainbowImage.getHeight()
+        );
+
         // put initial image for poop
         this.poopImage = BitmapFactory.decodeResource(this.getContext().getResources(),
                 R.drawable.poop32);
         this.poopXPosition = 1300;
         this.poopYPosition = 120;
-
+        this.poopHitbox = new Rect(1300,
+                120,
+                1300+poopImage.getWidth(),
+                120+poopImage.getHeight()
+        );
     }
 
 
