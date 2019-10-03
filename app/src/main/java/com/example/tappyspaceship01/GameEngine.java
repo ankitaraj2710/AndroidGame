@@ -223,11 +223,11 @@ public class GameEngine extends SurfaceView implements Runnable {
             canvas.drawBitmap(dinoImage, playerXPosition,playerYPosition, paintbrush);
 
 
-            // draw rainbow on the screen
+            // draw rainbow an its hitbox on the screen
 
             canvas.drawBitmap(rainbowImage, rainbowXPosition,rainbowYPosition, paintbrush);
             canvas.drawRect(this.rainbowHitbox, paintbrush);
-
+          //draw poop and its hitbox  on the screen
             canvas.drawBitmap(poopImage, poopXPosition,poopYPosition, paintbrush);
             canvas.drawRect(this.poopHitbox, paintbrush);
 
