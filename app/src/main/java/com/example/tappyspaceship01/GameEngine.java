@@ -101,34 +101,34 @@ public class GameEngine extends SurfaceView implements Runnable {
 
         this.candyImage = BitmapFactory.decodeResource(this.getContext().getResources(),
                 R.drawable.candy32);
-        this.candyXPosition = 1300;
-        this.candyYPosition = 120;
+        this.candyXPosition = 1000;
+        this.candyYPosition = 10;
 
-        this.candyHitbox = new Rect(1300,
-                120,
-                1300+candyImage.getWidth(),
-                120+candyImage.getHeight()
+        this.candyHitbox = new Rect(1000,
+                100,
+                1000+candyImage.getWidth(),
+                100+candyImage.getHeight()
         );
         //put initial image for rainbow
 
         this.rainbowImage = BitmapFactory.decodeResource(this.getContext().getResources(),
                 R.drawable.rainbow32);
-        this.rainbowXPosition = 1300;
-        this.rainbowYPosition = 120;
+        this.rainbowXPosition = 1100;
+        this.rainbowYPosition = 110;
         this.rainbowHitbox = new Rect(1300,
-                120,
-                1300+rainbowImage.getWidth(),
-                120+rainbowImage.getHeight()
+                110,
+                1100+rainbowImage.getWidth(),
+                110+rainbowImage.getHeight()
         );
 
         // put initial image for poop
         this.poopImage = BitmapFactory.decodeResource(this.getContext().getResources(),
                 R.drawable.poop32);
-        this.poopXPosition = 1300;
+        this.poopXPosition = 900;
         this.poopYPosition = 120;
-        this.poopHitbox = new Rect(1300,
+        this.poopHitbox = new Rect(900,
                 120,
-                1300+poopImage.getWidth(),
+                900+poopImage.getWidth(),
                 120+poopImage.getHeight()
         );
     }
@@ -196,7 +196,7 @@ public class GameEngine extends SurfaceView implements Runnable {
 
             // configure the drawing tools
             this.canvas.drawColor(Color.argb(255,255,255,255));
-            paintbrush.setColor(Color.WHITE);
+            paintbrush.setColor(Color.YELLOW);
 
 
             // DRAW THE PLAYER HITBOX
@@ -204,7 +204,7 @@ public class GameEngine extends SurfaceView implements Runnable {
             // 1. change the paintbrush settings so we can see the hitbox
             paintbrush.setColor(Color.BLUE);
             paintbrush.setStyle(Paint.Style.STROKE);
-            paintbrush.setStrokeWidth(5);
+            paintbrush.setStrokeWidth(8);
 
 
             // draw candy graphic on screen
@@ -214,12 +214,10 @@ public class GameEngine extends SurfaceView implements Runnable {
 
             // draw the dino graphic on the screen
             canvas.drawBitmap(dinoImage, playerXPosition,playerYPosition, paintbrush);
-            // 2. draw the enemy's hitbox
-            //canvas.drawRect(this.enemyHitbox, paintbrush);
 
 
             // draw rainbow on the screen
-            // draw the enemy graphic on the screen
+
             canvas.drawBitmap(rainbowImage, rainbowXPosition,rainbowYPosition, paintbrush);
             // 2. draw the enemy's hitbox
             //canvas.drawRect(this.enemy2Hitbox, paintbrush);
