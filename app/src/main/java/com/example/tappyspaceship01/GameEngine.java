@@ -105,7 +105,7 @@ public class GameEngine extends SurfaceView implements Runnable {
         this.candyImage = BitmapFactory.decodeResource(this.getContext().getResources(),
                 R.drawable.candy32);
         this.candyXPosition = 1000;
-        this.candyYPosition = 10;
+        this.candyYPosition = 100;
 
         this.candyHitbox = new Rect(1000,
                 100,
@@ -118,7 +118,7 @@ public class GameEngine extends SurfaceView implements Runnable {
                 R.drawable.rainbow32);
         this.rainbowXPosition = 1100;
         this.rainbowYPosition = 110;
-        this.rainbowHitbox = new Rect(1300,
+        this.rainbowHitbox = new Rect(1100,
                 110,
                 1100+rainbowImage.getWidth(),
                 110+rainbowImage.getHeight()
@@ -215,6 +215,7 @@ public class GameEngine extends SurfaceView implements Runnable {
 
             // draw candy graphic on screen
             canvas.drawBitmap(candyImage, candyXPosition, candyYPosition, paintbrush);
+            canvas.drawRect(this.candyHitbox, paintbrush);
             // draw the player's hitbox
            canvas.drawRect(this.playerHitbox, paintbrush);
 
@@ -225,6 +226,10 @@ public class GameEngine extends SurfaceView implements Runnable {
             // draw rainbow on the screen
 
             canvas.drawBitmap(rainbowImage, rainbowXPosition,rainbowYPosition, paintbrush);
+            canvas.drawRect(this.rainbowHitbox, paintbrush);
+
+            canvas.drawBitmap(poopImage, poopXPosition,poopYPosition, paintbrush);
+            canvas.drawRect(this.poopHitbox, paintbrush);
 
 
             //draw the lane
