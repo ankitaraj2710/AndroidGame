@@ -73,6 +73,9 @@ public class GameEngine extends SurfaceView implements Runnable {
     int poopYPosition;
     Rect poopHitbox;
 
+ //adding lane to the screen
+    int laneXPosition;
+    int laneYPosition;
 
     int lives = 3;
     public GameEngine(Context context, int w, int h) {
@@ -131,6 +134,9 @@ public class GameEngine extends SurfaceView implements Runnable {
                 900+poopImage.getWidth(),
                 120+poopImage.getHeight()
         );
+
+        this.laneXPosition = 500;
+        this.laneYPosition =  1500;
     }
 
 
@@ -219,11 +225,16 @@ public class GameEngine extends SurfaceView implements Runnable {
             // draw rainbow on the screen
 
             canvas.drawBitmap(rainbowImage, rainbowXPosition,rainbowYPosition, paintbrush);
-            // 2. draw the enemy's hitbox
-            //canvas.drawRect(this.enemy2Hitbox, paintbrush);
 
 
-
+            //draw the lane
+            paintbrush.setColor(Color.YELLOW);
+            this.canvas.drawLine(this.laneXPosition,
+                    this.laneYPosition,
+                    this.laneXPosition + 400,
+                    this.laneYPosition + 50,
+                    paintbrush);
+            paintbrush.setColor(Color.BLUE);
 
             // DRAW GAME STATS
             // -----------------------------
