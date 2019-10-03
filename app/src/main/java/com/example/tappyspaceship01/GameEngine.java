@@ -92,7 +92,7 @@ public class GameEngine extends SurfaceView implements Runnable {
         this.playerXPosition = 1300;
         this.playerYPosition = 120;
         // 1. create the hitbox
-        this.dinoImage = new Rect(1300,
+        this.playerHitbox = new Rect(1300,
                 120,
                 1300+dinoImage.getWidth(),
                 120+dinoImage.getHeight()
@@ -104,6 +104,11 @@ public class GameEngine extends SurfaceView implements Runnable {
         this.candyXPosition = 1300;
         this.candyYPosition = 120;
 
+        this.candyHitbox = new Rect(1300,
+                120,
+                1300+candyImage.getWidth(),
+                120+candyImage.getHeight()
+        );
         //put initial image for rainbow
 
         this.rainbowImage = BitmapFactory.decodeResource(this.getContext().getResources(),
