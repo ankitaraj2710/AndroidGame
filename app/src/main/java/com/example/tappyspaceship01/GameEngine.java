@@ -91,6 +91,12 @@ public class GameEngine extends SurfaceView implements Runnable {
                 R.drawable.dino32);
         this.playerXPosition = 1300;
         this.playerYPosition = 120;
+        // 1. create the hitbox
+        this.dinoImage = new Rect(1300,
+                120,
+                1300+dinoImage.getWidth(),
+                120+dinoImage.getHeight()
+        );
     // put initial position of candy
 
         this.candyImage = BitmapFactory.decodeResource(this.getContext().getResources(),
@@ -189,7 +195,7 @@ public class GameEngine extends SurfaceView implements Runnable {
             // draw candy graphic on screen
             canvas.drawBitmap(candyImage, candyXPosition, candyYPosition, paintbrush);
             // draw the player's hitbox
-           // canvas.drawRect(this.playerHitbox, paintbrush);
+           canvas.drawRect(this.playerHitbox, paintbrush);
 
             // draw the dino graphic on the screen
             canvas.drawBitmap(dinoImage, playerXPosition,playerYPosition, paintbrush);
