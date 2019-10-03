@@ -185,7 +185,35 @@ public class GameEngine extends SurfaceView implements Runnable {
             paintbrush.setStyle(Paint.Style.STROKE);
             paintbrush.setStrokeWidth(5);
 
-            //----------------
+
+            // draw candy graphic on screen
+            canvas.drawBitmap(candyImage, candyXPosition, candyYPosition, paintbrush);
+            // draw the player's hitbox
+           // canvas.drawRect(this.playerHitbox, paintbrush);
+
+            // draw the dino graphic on the screen
+            canvas.drawBitmap(dinoImage, playerXPosition,playerYPosition, paintbrush);
+            // 2. draw the enemy's hitbox
+            //canvas.drawRect(this.enemyHitbox, paintbrush);
+
+
+            // draw rainbow on the screen
+            // draw the enemy graphic on the screen
+            canvas.drawBitmap(rainbowImage, rainbowXPosition,rainbowYPosition, paintbrush);
+            // 2. draw the enemy's hitbox
+            //canvas.drawRect(this.enemy2Hitbox, paintbrush);
+
+
+
+
+            // DRAW GAME STATS
+            // -----------------------------
+            paintbrush.setTextSize(60);
+            canvas.drawText("Lives remaining: " + lives,
+                    1100,
+                    800,
+                    paintbrush
+            );
             this.holder.unlockCanvasAndPost(canvas);
         }
     }
